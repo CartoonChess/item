@@ -20,25 +20,19 @@ public class Bookshelf {
         // We will change this to match the first empty position found
         int emptyIndex = 0;
 
-        // Don't allow adding a book if duplicate exists
+        // Check each index for being a duplicate or being empty
         for (int i = 0; i < CAPACITY; i++) {
-            // TODO: Do we need to check for null first?
-            if (false) {
+            if (books[i] == book) {
+                // Don't allow adding a book if duplicate exists
                 System.out.println("Cannot add book: Shelf contains duplicate.");
                 return;
+            } else if (books[i] == null) {
+                emptyIndex = i;
             }
         }
 
         // Add book in first empty position found
         books[emptyIndex] = book;
-
-        // // Add book in first empty position
-        // for (int i = 0; i < CAPACITY; i++) {
-        //     if (books[i] == null) {
-        //         books[i] = book;
-        //         return;
-        //     }
-        // }
     }
 
     public void removeBook(int i) {
@@ -71,6 +65,7 @@ public class Bookshelf {
     public String toString() {
         // Create a string with each book's details
         StringBuilder out = new StringBuilder();
+        out.append("Bookshelf name: " + name + "\n\n");
         for (Book book : books) {
             // Only add to string if there's a book in that position
             if (book != null) {
