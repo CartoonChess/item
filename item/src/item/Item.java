@@ -4,7 +4,9 @@ public class Item {
     // TODO: Should these be private, with subclasses using getters?
     protected String title;
     protected String description;
-    protected float price;
+    protected double price;
 
-    // TODO: getters/setters
+    // TODO: getters/setters (get from Book)
+
+    // TODO: format price to two decimals
 }

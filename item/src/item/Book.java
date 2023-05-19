@@ -5,7 +5,7 @@ public class Book extends Item {
     // TODO: "date" type?
     private String copyrightDate;
 
-    public Book(String title, String description, float price, int pageCount, String copyrightDate) {
+    public Book(String title, String description, double price, int pageCount, String copyrightDate) {
         this.title = title;
         this.description = description;
         this.price = price;
@@ -19,6 +19,8 @@ public class Book extends Item {
 
     // Getters
 
+    // TODO: Move first three to Item class
+
     public String getTitle() {
         return title;
     }
@@ -27,7 +29,7 @@ public class Book extends Item {
         return description;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -49,7 +51,7 @@ public class Book extends Item {
         this.description = description;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
