@@ -8,6 +8,10 @@ public class CD extends Item {
         this.trackCount = trackCount;
     }
 
+    public String toString() {
+        return "\"" + getTitle() + "\"\n" + getDescription() + "\n" + "($" + getPriceFormatted() + ". " + trackCount + " tracks.)";
+    }
+
     // Getters and setters
 
     public int getTrackCount() {

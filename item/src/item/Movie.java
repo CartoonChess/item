@@ -8,6 +8,10 @@ public class Movie extends Item {
         this.length = length;
     }
 
+    public String toString() {
+        return "\"" + getTitle() + "\"\n" + getDescription() + "\n" + "($" + getPriceFormatted() + ". " + length + " minutes.)";
+    }
+
     // Getters and setters
 
     public int getLength() {

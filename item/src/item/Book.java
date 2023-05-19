@@ -2,8 +2,7 @@ package item;
 
 public class Book extends Item {
     private int pageCount;
-    // TODO: "date" type?
-    private String copyrightDate;
+    private String copyrightDate; // just a String, not a special date type
 
     public Book(String title, String description, double price, int pageCount, String copyrightDate) {
         // Use the Item constructor for common properties
@@ -14,9 +13,7 @@ public class Book extends Item {
     }
 
     public String toString() {
-        // Show price to two decimal places
-        String priceFormatted = String.format("%.2f", getPrice());
-        return "\"" + getTitle() + "\"\n" + getDescription() + "\n" + "(" + pageCount + " pages. $" + priceFormatted + ". © " + copyrightDate + ".)";
+        return "\"" + getTitle() + "\"\n" + getDescription() + "\n" + "($" + getPriceFormatted() + ". " + pageCount + " pages. © " + copyrightDate + ".)";
     }
 
     // Getters

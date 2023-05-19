@@ -25,6 +25,11 @@ public class Item {
         return price;
     }
 
+    // Show price to two decimal places
+    public String getPriceFormatted() {
+        return String.format("%.2f", getPrice());
+    }
+
     // Setters
 
     public void setTitle(String title) {
