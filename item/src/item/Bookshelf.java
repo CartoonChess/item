@@ -3,47 +3,68 @@ package item;
 public class Bookshelf {
     private String name;
     // Limit of five books
-    private Book[] books;
+    private static final int CAPACITY = 5;
+    private Book[] books = new Book[CAPACITY];
 
     public void addBook(Book book) {
-        // TODO: logic
-        //if self.isFull {error
-        
-        Book[] updatedBooks = {new Book("title", "desc", 0, 0, "copyr")};
-        books = updatedBooks;
+         // Don't allow adding a book if shelf is full
+        if (this.isFull()) {
+            System.out.println("Cannot add book: Shelf is full.");
+            return;
+        }
 
-        System.arra
+        // Add book in first empty position
+        for (int i = 0; i < CAPACITY; i++) {
+            if (books[i] == null) {
+                books[i] = book;
+                return;
+            }
+        }
     }
 
-    public void removeBook(int index) {
-        // TODO: logic
+    public void removeBook(int i) {
+        // This effectively does nothing if there is no book at the given position
+        books[i] = null;
     }
 
     public boolean isFull() {
-        if (books.length == 5) {
-            return true;
-        } else {
-            return false;
+        // If any position is empty, return false
+        for (Book book : books) {
+            if (book == null) {
+                return false;
+            }
         }
+        // If five books, return true
+        return true;
     }
 
     public boolean isEmpty() {
-        // TODO: Do we need a length check?
-        // if (books.length == 0) {
-        if (books == null) {
-            return true;
-        } else {
-            return false;
+        // If any book is on the shelf, return false
+        for (Book book : books) {
+            if (book != null) {
+                return false;
+            }
         }
+        // If no books, return true
+        return true;
     }
 
     public String toString() {
-        // TODO: use StringBuilder isntead for efficiency
-        // TODO: skip null items
-        String out = "";
+        // Create a string with each book's details
+        StringBuilder out = new StringBuilder();
         for (Book book : books) {
-            out += book + "\n\n";
+            // Only add to string if there's a book in that position
+            if (book != null) {
+                out.append(book + "\n\n");
+            }
         }
-        return out;
+
+        // Return all book details or a message that the shelf is empty
+        if (out.length() > 0) {
+            // Make sure to remove the trailing linebreaks
+            return out.toString().trim();
+        } else {
+            return "Bookshelf is empty.";
+        }
     }
 }
