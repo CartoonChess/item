@@ -6,18 +6,17 @@ public class Book extends Item {
     private String copyrightDate;
 
     public Book(String title, String description, double price, int pageCount, String copyrightDate) {
-        // this.title = title;
-        setTitle(title);
-        this.description = description;
-        this.price = price;
+        // Use the Item constructor for common properties
+        super(title, description, price);
+        // Assign values unique to Book
         this.pageCount = pageCount;
         this.copyrightDate = copyrightDate;
     }
 
     public String toString() {
         // Show price to two decimal places
-        String priceFormatted = String.format("%.2f", price);
-        return "\"" + getTitle() + "\"\n" + description + "\n" + "(" + pageCount + " pages. $" + priceFormatted + ". © " + copyrightDate + ".)";
+        String priceFormatted = String.format("%.2f", getPrice());
+        return "\"" + getTitle() + "\"\n" + getDescription() + "\n" + "(" + pageCount + " pages. $" + priceFormatted + ". © " + copyrightDate + ".)";
     }
 
     // Getters

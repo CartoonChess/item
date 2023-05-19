@@ -1,10 +1,15 @@
 package item;
 
 public class Item {
-    // TODO: Should these be private, with subclasses using getters?
     private String title;
-    protected String description;
-    protected double price;
+    private String description;
+    private double price;
+
+    public Item(String title, String description, double price) {
+        this.title = title;
+        this.description = description;
+        this.price = price;
+    }
 
     // Getters
 
