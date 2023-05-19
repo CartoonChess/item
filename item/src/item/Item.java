@@ -2,11 +2,35 @@ package item;
 
 public class Item {
     // TODO: Should these be private, with subclasses using getters?
-    protected String title;
+    private String title;
     protected String description;
     protected double price;
 
-    // TODO: getters/setters (get from Book)
+    // Getters
 
-    // TODO: format price to two decimals
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    // Setters
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }

@@ -21,16 +21,17 @@ public class TestProject {
         // Creates an Item array of size 9 while simultaneously instantiating nine items
         Item[] ar = {
             new Book("Java Book", "Laing", 200.0, 1016, "11-20-2020"),
-            new Book("JavaScript Redefined", "Brooks", 55.5, 390, ""),
-            new Book("Perl, Python & PHP in Practice", "Pattington", 129.99, 3308, ""),
-            new Book("Swift for Dummies", "Jobs", 15.0, 99, ""),
-            new Book("The TypeScript Revolution", "Koo", 35.34, 312, ""),
+            new Book("JavaScript Redefined", "Brooks", 55.5, 390, "12-04-1995"),
+            new Book("Perl, Python & PHP in Practice", "Pattington", 129.99, 3308, "09-09-1999"),
+            new Book("Swift for Dummies", "Jobs", 15.0, 99, "07-17-2020"),
+            new Book("The TypeScript Revolution", "Koo", 35.34, 312, "05-21-2023"),
             new Movie("ET", "ET was from Jupiter", 6.0, 115),
             new Movie("Parasite", "THrills and chills for two families", 8.55, 131),
             new CD("Best", "Xcompany", 15.0, 12),
             new CD("Thursday's Child", "TXT", 19.99, 5)
         };
 
+        // Output items
         for(Item aItem : ar) {
             System.out.println(aItem);
         }
