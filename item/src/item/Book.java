@@ -13,6 +13,10 @@ public class Book extends Item {
         this.copyrightDate = copyrightDate;
     }
 
+    public String toString() {
+        return "\"" + title + "\"\n" + description + "\n" + "(" + pageCount + " pages. $" + price + ". © " + copyrightDate + ".)";
+    }
+
     // Getters
 
     public String getTitle() {
@@ -55,12 +59,5 @@ public class Book extends Item {
 
     public void setCopyrightDate(String copyrightDate) {
         this.copyrightDate = copyrightDate;
-    }
-
-    // TODO: toString
-    // "returns a nicely formatted, multi-line description of the book"
-    public String toString() {
-       return "";
-       //System.out.println(description);
     }
 }
