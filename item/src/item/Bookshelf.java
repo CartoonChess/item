@@ -6,6 +6,10 @@ public class Bookshelf {
     private static final int CAPACITY = 5;
     private Book[] books = new Book[CAPACITY];
 
+    public Bookshelf(String name) {
+        this.name = name;
+    }
+
     public void addBook(Book book) {
          // Don't allow adding a book if shelf is full
         if (this.isFull()) {
@@ -13,13 +17,28 @@ public class Bookshelf {
             return;
         }
 
-        // Add book in first empty position
+        // We will change this to match the first empty position found
+        int emptyIndex = 0;
+
+        // Don't allow adding a book if duplicate exists
         for (int i = 0; i < CAPACITY; i++) {
-            if (books[i] == null) {
-                books[i] = book;
+            // TODO: Do we need to check for null first?
+            if (false) {
+                System.out.println("Cannot add book: Shelf contains duplicate.");
                 return;
             }
         }
+
+        // Add book in first empty position found
+        books[emptyIndex] = book;
+
+        // // Add book in first empty position
+        // for (int i = 0; i < CAPACITY; i++) {
+        //     if (books[i] == null) {
+        //         books[i] = book;
+        //         return;
+        //     }
+        // }
     }
 
     public void removeBook(int i) {
